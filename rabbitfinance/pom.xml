@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.rabbitinternet</groupId>
+    <artifactId>rabbitinternet</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>rabbitfinance</artifactId>
+  <dependencies>
+		<dependency>
+			<groupId>com.rabbitinternet</groupId>
+			<artifactId>rabbitbase</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+   </dependencies>
+	
+	<build>
+		<plugins>			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+
+					<suiteXmlFiles>
+						<suiteXmlFile>${project.build.testOutputDirectory}/testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+
+					<parallel>classes</parallel>
+					<threadCount>1</threadCount>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

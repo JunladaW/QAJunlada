@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.rabbitrewards.testcase.mydetail.Update_Customer_Home_Address_001">
+        <methods>
+          <include name="rewardsSignin_2"/>
+          <include name="rewardsLogin"/>
+          <include name="rewardsSignOut_1"/>
+          <include name="rewardsSignOut_2"/>
+          <include name="getBrowserName"/>
+          <include name="tearDown"/>
+          <include name="updateExisitingCustomerDetails"/>
+          <include name="staticValidationMyDetail"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.rabbitrewards.testcase.mydetail.Update_Customer_Home_Address_001 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

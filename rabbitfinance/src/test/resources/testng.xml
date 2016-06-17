@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rabbit Internet" parallel="false" thread-count="2">
+
+	<test verbose="1" name="Rabbit Car Insurance">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitfinance.testcase.Lead_NewCustomer_001" />
+			<class name="com.rabbitfinance.testcase.Lead_ExistingCustomer_002" />
+			<class name="com.rabbitfinance.testcase.Lead_DuplicateValidation_003" />
+			<class name="com.rabbitfinance.testcase.Lead_ChangeCar_004" />
+			<class name="com.rabbitfinance.testcase.Lead_BackButtonValidation_005" />
+		</classes>
+	</test> 
+</suite> 

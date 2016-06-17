@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="10" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="377635" started-at="2016-06-17T01:54:30Z" finished-at="2016-06-17T02:00:48Z">
+    <groups>
+      <group name="END_TO_END">
+        <method signature="Order_0023_WithPaymentInstallment.login_NANA()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="login_NANA" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.createLead_AssignToAgent()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="createLead_AssignToAgent" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.login_SaleAgent()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="login_SaleAgent" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.searchSaleAgent_OrderID()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="searchSaleAgent_OrderID" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.fillSaleInfomation()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="fillSaleInfomation" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.readyToSubmit()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="readyToSubmit" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.insurerAccepted()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="insurerAccepted" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.shipmentProcess()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="shipmentProcess" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.closeOrder_Accounting()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="closeOrder_Accounting" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+        <method signature="Order_0023_WithPaymentInstallment.finalProcessForOrder()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="finalProcessForOrder" class="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment"/>
+      </group> <!-- END_TO_END -->
+    </groups>
+    <test name="Default test" duration-ms="377635" started-at="2016-06-17T01:54:30Z" finished-at="2016-06-17T02:00:48Z">
+      <class name="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment">
+        <test-method status="PASS" signature="getBrowserName(java.lang.String)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getBrowserName" is-config="true" duration-ms="27" started-at="2016-06-17T08:54:30Z" finished-at="2016-06-17T08:54:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBrowserName -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="setUp" is-config="true" duration-ms="18085" started-at="2016-06-17T08:54:30Z" finished-at="2016-06-17T08:54:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="login_NANA()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="login_NANA" duration-ms="16671" started-at="2016-06-17T08:54:48Z" finished-at="2016-06-17T08:55:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_NANA -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T08:54:48Z" finished-at="2016-06-17T08:54:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.login_NANA() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="1" started-at="2016-06-17T08:55:05Z" finished-at="2016-06-17T08:55:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.createLead_AssignToAgent() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="createLead_AssignToAgent()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="createLead_AssignToAgent" duration-ms="44464" started-at="2016-06-17T08:55:05Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.login_NANA" finished-at="2016-06-17T08:55:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLead_AssignToAgent -->
+        <test-method status="PASS" signature="login_SaleAgent()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="login_SaleAgent" duration-ms="35193" started-at="2016-06-17T08:55:50Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.createLead_AssignToAgent" finished-at="2016-06-17T08:56:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_SaleAgent -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T08:55:50Z" finished-at="2016-06-17T08:55:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.login_SaleAgent() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="4" started-at="2016-06-17T08:56:25Z" finished-at="2016-06-17T08:56:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.searchSaleAgent_OrderID() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="searchSaleAgent_OrderID()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="searchSaleAgent_OrderID" duration-ms="4797" started-at="2016-06-17T08:56:25Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.login_SaleAgent" finished-at="2016-06-17T08:56:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchSaleAgent_OrderID -->
+        <test-method status="PASS" signature="fillSaleInfomation()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="fillSaleInfomation" duration-ms="97468" started-at="2016-06-17T08:56:30Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.searchSaleAgent_OrderID" finished-at="2016-06-17T08:58:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillSaleInfomation -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T08:56:30Z" finished-at="2016-06-17T08:56:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.fillSaleInfomation() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="1" started-at="2016-06-17T08:58:07Z" finished-at="2016-06-17T08:58:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.readyToSubmit() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="readyToSubmit()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="readyToSubmit" duration-ms="82280" started-at="2016-06-17T08:58:07Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.fillSaleInfomation" finished-at="2016-06-17T08:59:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readyToSubmit -->
+        <test-method status="PASS" signature="insurerAccepted()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="insurerAccepted" duration-ms="33543" started-at="2016-06-17T08:59:29Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.readyToSubmit" finished-at="2016-06-17T09:00:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insurerAccepted -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T08:59:29Z" finished-at="2016-06-17T08:59:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.insurerAccepted() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="shipmentProcess()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="shipmentProcess" duration-ms="16763" started-at="2016-06-17T09:00:03Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.insurerAccepted" finished-at="2016-06-17T09:00:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shipmentProcess -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T09:00:03Z" finished-at="2016-06-17T09:00:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.shipmentProcess() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T09:00:20Z" finished-at="2016-06-17T09:00:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.closeOrder_Accounting() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="closeOrder_Accounting()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="closeOrder_Accounting" duration-ms="10402" started-at="2016-06-17T09:00:20Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.shipmentProcess" finished-at="2016-06-17T09:00:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeOrder_Accounting -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="getMethodName" is-config="true" duration-ms="0" started-at="2016-06-17T09:00:30Z" finished-at="2016-06-17T09:00:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.finalProcessForOrder() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="finalProcessForOrder()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="finalProcessForOrder" duration-ms="17340" started-at="2016-06-17T09:00:30Z" depends-on-methods="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment.closeOrder_Accounting" finished-at="2016-06-17T09:00:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- finalProcessForOrder -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment@2a742aa2]" name="tearDown" is-config="true" duration-ms="578" started-at="2016-06-17T09:00:47Z" finished-at="2016-06-17T09:00:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

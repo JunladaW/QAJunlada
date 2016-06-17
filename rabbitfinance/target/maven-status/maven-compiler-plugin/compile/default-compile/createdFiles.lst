@@ -1,0 +1,8 @@
+com\rabbitfinance\excelcolumns\XL_CarInsurance.class
+com\rabbitfinance\testcase\Lead_BackButtonValidation_005.class
+com\rabbitfinance\testscript\CarInsurance.class
+com\rabbitfinance\testcase\Lead_DuplicateValidation_003.class
+com\rabbitfinance\testcase\Lead_NewCustomer_001.class
+com\rabbitfinance\testcase\Lead_ExistingCustomer_002.class
+com\rabbitfinance\testcase\Lead_ChangeCar_004.class
+com\rabbitfinance\objectrepository\OR_CarInsurance.class

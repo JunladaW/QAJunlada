@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rabbit Rewards" parallel="false" thread-count="2">
+
+	<test verbose="1" name="Update MyDetail">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitrewards.testcase.mydetail.Update_Customer_Home_Address_001" />
+			<class name="com.rabbitrewards.testcase.mydetail.Update_Customer_Shipping_Address_002" />
+			<class name="com.rabbitrewards.testcase.mydetail.Update_Customer_Other_Info_003" />
+			<class name="com.rabbitrewards.testcase.mydetail.Update_Customer_Email_004" />
+			<class name="com.rabbitrewards.testcase.mydetail.Update_Customer_All_Details_005" />
+			<class name="com.rabbitrewards.testcase.mydetail.Update_Customer_Shipping_Same_Home_006" />
+		</classes>
+	</test> 
+	<test verbose="1" name="Change password">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitrewards.testcase.changepassword.Change_Password_001" />
+		</classes>
+	</test> 
+	<test verbose="1" name="Add / Remove Rabbit Card">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitrewards.testcase.addchangeRabbitCard.Add_Remove_Rabbit_Card_001" />
+		</classes>
+	</test>
+	<test verbose="1" name="Redeem">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitrewards.testcase.redeem.Update_Shipping_Address_To_MyDetail_001" />
+			<class name="com.rabbitrewards.testcase.redeem.Update_Shipping_Address_In_Redeem_Only_002" />
+			<class name="com.rabbitrewards.testcase.redeem.Redeem_Directly_003" />
+			<class name="com.rabbitrewards.testcase.redeem.Redeem_From_Cart_004" />
+		</classes>
+	</test> 
+</suite> 

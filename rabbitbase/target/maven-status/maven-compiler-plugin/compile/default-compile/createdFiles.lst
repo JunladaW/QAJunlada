@@ -1,0 +1,7 @@
+com\rabbitbase\generic\BaseClass.class
+com\rabbitbase\objectrepository\OR_GenericNANA.class
+com\rabbitbase\generic\Generic_NANA.class
+com\rabbitbase\xl\XL_GenericRewards.class
+com\rabbitbase\xl\XL_GenericNANA.class
+com\rabbitbase\generic\Generic_Rewards.class
+com\rabbitbase\objectrepository\OR_GenericRewards.class
