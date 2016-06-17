@@ -2,10 +2,45 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Rabbit Rewards" parallel="false" thread-count="2">
 
-	<test verbose="1" name="Sale Agent">
+	<test verbose="1" name="End to End Scenario - 1">
 		<parameter name="Browser" value="Chrome"/>
 		<classes>
-			<class name="com.rabbitnana.testcase.Search_SalesAgent_0001" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0002_With_Modification_Without_FixedDriver" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0003_With_Modification_With_FixedDriver1" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0004_With_Modification_With_FixedDriver1and2" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0005_Without_Modification_With_FixedDriver1and2" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0006_With_Last_Insurer_Claim" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0007_With_Billing_Address" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0008_With_Shipping_Address" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0009_With_Different_Addresses" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0010_Type2andMandatoryInsurance" />
 		</classes>
 	</test>
+	
+	<test verbose="1" name="End to End Scenario - 2">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0011_Type2andMandatoryInsuranceNo" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0012_Type2PlusandMandatoryInsurance" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0013_Type2PlusandMandatoryInsuranceNo" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0014_Type3andMandatoryInsurance" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0015_Type3andMandatoryInsuranceNo" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0016_Type3PlusandMandatoryInsurance" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0017_Type3PlusandMandatoryInsuranceNo" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0018_SpecificProvinces" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0019_WithCompanyName" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0020_WithGift_CarDVR" />
+		</classes>
+	</test>
+	
+	<test verbose="1" name="End to End Scenario - 3">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0021_WithGift_PTTCard" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0022_WithGift_Vouchers" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0023_WithPaymentInstallment" />
+		</classes>
+	</test>
+	
 </suite> 

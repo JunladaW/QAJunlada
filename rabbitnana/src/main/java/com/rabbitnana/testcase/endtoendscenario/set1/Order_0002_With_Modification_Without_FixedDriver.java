@@ -26,7 +26,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		return "Rabbit_Nana.xls";
 	}
 
-	@Test(groups = { "END_TO_END" })
+	@Test(groups = { "END_TO_END_SET_1" })
 	public void login_NANA() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		Generic_NANA nanaLogin = new Generic_NANA(testWareBean, test);
@@ -34,7 +34,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(nanaLogin);
 	}
 
-	@Test(dependsOnMethods = { "login_NANA" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "login_NANA" }, groups = { "END_TO_END_SET_1" })
 	public void createLead_AssignToAgent() throws BusinessException, InterruptedException {
 		setExcelRow(9);
 		Leads createLead = new Leads(testWareBean, test);
@@ -42,7 +42,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(createLead);
 	}
 
-	@Test(dependsOnMethods = { "createLead_AssignToAgent" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "createLead_AssignToAgent" }, groups = { "END_TO_END_SET_1" })
 	public void login_SaleAgent() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		Generic_NANA loginSaleAgent = new Generic_NANA(testWareBean, test);
@@ -50,7 +50,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(loginSaleAgent);
 	}
 
-	@Test(dependsOnMethods = { "login_SaleAgent" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "login_SaleAgent" }, groups = { "END_TO_END_SET_1" })
 	public void searchSaleAgent_OrderID() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		SaleAgent search = new SaleAgent(testWareBean, test);
@@ -58,7 +58,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(search);
 	}
 
-	@Test(dependsOnMethods = { "searchSaleAgent_OrderID" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "searchSaleAgent_OrderID" }, groups = { "END_TO_END_SET_1" })
 	public void fillSaleInfomation() throws Exception {
 		setExcelRow(3);
 		TabInfo fillSaleInfo = new TabInfo(testWareBean, test);
@@ -66,7 +66,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(fillSaleInfo);
 	}
 
-	@Test(dependsOnMethods = { "fillSaleInfomation" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "fillSaleInfomation" }, groups = { "END_TO_END_SET_1" })
 	public void readyToSubmit() throws BusinessException, InterruptedException {
 		setExcelRow(3);
 		InboundAndHelpdesk readyToSubmit = new InboundAndHelpdesk(testWareBean, test);
@@ -74,7 +74,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(readyToSubmit);
 	}
 
-	@Test(dependsOnMethods = { "readyToSubmit" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "readyToSubmit" }, groups = { "END_TO_END_SET_1" })
 	public void insurerAccepted() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		SubmittableCases submitCoverNote = new SubmittableCases(testWareBean, test);
@@ -82,7 +82,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(submitCoverNote);
 	}
 
-	@Test(dependsOnMethods = { "insurerAccepted" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "insurerAccepted" }, groups = { "END_TO_END_SET_1" })
 	public void shipmentProcess() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		Shipments shipments = new Shipments(testWareBean, test);
@@ -90,7 +90,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(shipments);
 	}
 
-	@Test(dependsOnMethods = { "shipmentProcess" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "shipmentProcess" }, groups = { "END_TO_END_SET_1" })
 	public void closeOrder_Accounting() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		Accounting closeOrder = new Accounting(testWareBean, test);
@@ -98,7 +98,7 @@ public class Order_0002_With_Modification_Without_FixedDriver extends BaseClass 
 		executeScript(closeOrder);
 	}
 
-	@Test(dependsOnMethods = { "closeOrder_Accounting" }, groups = { "END_TO_END" })
+	@Test(dependsOnMethods = { "closeOrder_Accounting" }, groups = { "END_TO_END_SET_1" })
 	public void finalProcessForOrder() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		InboundAndHelpdesk checkPaidInsurer = new InboundAndHelpdesk(testWareBean, test);
