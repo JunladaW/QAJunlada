@@ -197,9 +197,9 @@
 		<dependency>
 			<groupId>automation</groupId>
 			<artifactId>automation-framework</artifactId>
-			<version>1.4</version>
+			<version>1.3</version>
 			<scope>system</scope>
-    		<systemPath>D:\.m2\repository\automation\automation-framework\1.3\automation-framework-1.3.jar</systemPath>
+    		<systemPath>${project.basedir}/frameworkjar/automation-framework-1.3.jar</systemPath>
 		</dependency>
 		<dependency>
                 <groupId>org.seleniumhq.selenium</groupId>

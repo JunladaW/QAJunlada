@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Rabbit Rewards" duration-ms="3" started-at="2016-05-27T08:34:26Z" finished-at="2016-05-27T08:34:26Z">
+  <suite name="Rabbit Rewards" duration-ms="24355" started-at="2016-06-17T09:32:42Z" finished-at="2016-06-17T09:33:06Z">
     <groups>
+      <group name="END_TO_END_SET_1">
+        <method signature="Order_0001_Without_Modification_FixedDriver.login_NANA()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver@10bdf5e5]" name="login_NANA" class="com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver"/>
+      </group> <!-- END_TO_END_SET_1 -->
+      <group name="Testing">
+        <method signature="Order_0001_Without_Modification_FixedDriver.login_NANA()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver@10bdf5e5]" name="login_NANA" class="com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver"/>
+      </group> <!-- Testing -->
     </groups>
-    <test name="Sale Agent" duration-ms="3" started-at="2016-05-27T08:34:26Z" finished-at="2016-05-27T08:34:26Z">
-    </test> <!-- Sale Agent -->
+    <test name="End to End Scenario - 1" duration-ms="24326" started-at="2016-06-17T09:32:42Z" finished-at="2016-06-17T09:33:06Z">
+      <class name="com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver@10bdf5e5]" name="setUp" is-config="true" duration-ms="6979" started-at="2016-06-17T16:32:42Z" finished-at="2016-06-17T16:32:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="getMethodName(java.lang.reflect.Method)[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver@10bdf5e5]" name="getMethodName" is-config="true" duration-ms="3" started-at="2016-06-17T16:32:49Z" finished-at="2016-06-17T16:32:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver.login_NANA() throws com.automation.framework.exception.BusinessException,java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getMethodName -->
+        <test-method status="PASS" signature="login_NANA()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver@10bdf5e5]" name="login_NANA" duration-ms="15877" started-at="2016-06-17T16:32:49Z" finished-at="2016-06-17T16:33:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login_NANA -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver@10bdf5e5]" name="tearDown" is-config="true" duration-ms="1445" started-at="2016-06-17T16:33:05Z" finished-at="2016-06-17T16:33:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.rabbitnana.testcase.endtoendscenario.set1.Order_0001_Without_Modification_FixedDriver -->
+    </test> <!-- End to End Scenario - 1 -->
+    <test name="End to End Scenario - 2" duration-ms="0" started-at="2016-06-17T09:33:06Z" finished-at="2016-06-17T09:33:06Z">
+    </test> <!-- End to End Scenario - 2 -->
+    <test name="End to End Scenario - 3" duration-ms="0" started-at="2016-06-17T09:33:06Z" finished-at="2016-06-17T09:33:06Z">
+    </test> <!-- End to End Scenario - 3 -->
   </suite> <!-- Rabbit Rewards -->
 </testng-results>

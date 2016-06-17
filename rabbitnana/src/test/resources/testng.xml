@@ -37,9 +37,9 @@
 	<test verbose="1" name="End to End Scenario - 3">
 		<parameter name="Browser" value="Chrome"/>
 		<classes>
-			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0021_WithGift_PTTCard" />
-			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0022_WithGift_Vouchers" />
-			<class name="com.rabbitnana.testcase.endtoendscenario.set2.Order_0023_WithPaymentInstallment" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set3.Order_0021_WithGift_PTTCard" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set3.Order_0022_WithGift_Vouchers" />
+			<class name="com.rabbitnana.testcase.endtoendscenario.set3.Order_0023_WithPaymentInstallment" />
 		</classes>
 	</test>
 	
