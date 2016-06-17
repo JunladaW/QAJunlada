@@ -26,7 +26,7 @@ public class Order_0001_Without_Modification_FixedDriver extends BaseClass {
 		return "Rabbit_Nana.xls";
 	}
 
-	@Test(groups = { "END_TO_END" })
+	@Test(groups = { "END_TO_END", "Testing" })
 	public void login_NANA() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		Generic_NANA nanaLogin = new Generic_NANA(testWareBean, test);
