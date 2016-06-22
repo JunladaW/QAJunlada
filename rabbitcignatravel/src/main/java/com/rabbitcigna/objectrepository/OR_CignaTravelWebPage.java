@@ -23,9 +23,11 @@ public class OR_CignaTravelWebPage {
 			"Select Travel - From Bottom page " };
 
 	/* Questions - Your Trip */
-	public static final String[] WLS_TRAVEL_DESTINATION = { "//*[@name='country_id']", "Travel Destination" };
-	public static final String[] TOTAL_TRAVEL_DESTINATION = { "//*[@name='country_id']//option",
+	public static final String[] WLS_TRAVEL_DESTINATION = { "//*[@name='cigna_country_id']", "Travel Destination" };
+	public static final String[] TOTAL_TRAVEL_DESTINATION = { "//*[@name='cigna_country_id']//option",
 			"Total Travel Destinations" };
+	public static final String[] LBL_TRAVEL_DESTINATION = { "//*[@name='cigna_country_id']//option[%s]",
+			"Destination Name" };
 	public static final String[] TXT_TRAVEL_DURATION_FROM = { "//*[@id='start-date']", "Travel Duration From" };
 	public static final String[] TXT_TRAVEL_DURATION_TO = { "//*[@id='end-date']", "Travel Duration To" };
 	public static final String[] BTN_NEXT_YOUR_TRIP = { "//*[@class='btn btn-primary btn-block next-btn']",

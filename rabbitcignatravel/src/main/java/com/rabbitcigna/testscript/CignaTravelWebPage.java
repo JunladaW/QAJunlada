@@ -4,8 +4,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import org.openqa.selenium.By;
-
 import com.automation.framework.applib.FunctionsApplib;
 import com.automation.framework.beans.TestWareBean;
 import com.automation.framework.exception.BusinessException;
@@ -68,8 +66,10 @@ public class CignaTravelWebPage extends FunctionsApplib {
 		test.reportMessage("Total Destination Countries are " + getDestinationCount, false);
 
 		for (int destination = 1; destination <= getDestinationCount; destination++) {
-			String getCountryName = testWareBean.getWebDriver()
-					.findElement(By.xpath("//*[@name='country_id']//option[" + destination + "]")).getText().trim();
+
+			String[] replaceCountryName = test.replaceXpath(OR_CignaTravelWebPage.LBL_TRAVEL_DESTINATION, destination);
+			String getCountryName = test.getTextFromElement(replaceCountryName);
+
 			if (getCountryName.equalsIgnoreCase("Thailand")) {
 				test.reportMessage("Thailand found in Countries List", true);
 			}
