@@ -3,12 +3,15 @@ package com.rabbitbase.generic;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class DatePic {
 
 	public static void main(String[] args) throws ParseException {
-		getDateYear();
+		// getDate();
+		// getYesterdayDateString();
+		System.out.println(addDays(90, "yyyy-MM-dd"));
 	}
 
 	public static void selectDate() {
@@ -31,4 +34,34 @@ public class DatePic {
 		}
 
 	}
+
+	public static void getDate() throws ParseException {
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE, -1);
+		System.out.println("Yesterday's date = " + cal.getTime());
+	}
+
+	public static void getYesterdayDateString() {
+		DateFormat dateFormat = new SimpleDateFormat("dd");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DATE, -1);
+		System.out.println(dateFormat.format(cal.getTime()));
+	}
+
+	public static String addDays(int addDays, String dateFormat) {
+
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.DAY_OF_MONTH, addDays);
+		Date getDays = cal.getTime();
+		return getCurrentDate(getDays, dateFormat);
+
+	}
+
+	public static String getCurrentDate(Date getDays, String formatDate) {
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat(formatDate);
+		String date = dateFormat.format(getDays);
+		return date;
+	}
+
 }

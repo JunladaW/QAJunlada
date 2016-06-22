@@ -6,7 +6,7 @@ import com.automation.framework.applib.FunctionsApplib;
 import com.automation.framework.beans.TestWareBean;
 import com.automation.framework.exception.BusinessException;
 import com.automation.framework.util.Test;
-import com.rabbitbase.excelcolumns.XL_GenericNANA;
+import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitnana.excelcolumns.XL_SalesAgent;
 import com.rabbitnana.excelcolumns.XL_WriteToExcel;
 import com.rabbitnana.objectrepository.OR_SalesAgent;
@@ -19,7 +19,7 @@ public class SaleAgent extends FunctionsApplib {
 
 	@Override
 	protected String getSheetName() {
-		return XL_GenericNANA.SHEET_NANA_SALES;
+		return XL_GenericSheets.SHEET_NANA_SALES;
 	}
 
 	public void searchSalesListView() throws BusinessException, InterruptedException {
@@ -52,7 +52,7 @@ public class SaleAgent extends FunctionsApplib {
 			}
 
 		} else {
-			String getOrderID = test.getData(2, XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID);
+			String getOrderID = test.getData(2, XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID);
 			test.script(CLEAR_TYPE, OR_SalesAgent.WED_SEARCH, XL_WriteToExcel.LEADS_ORDER_ID, getOrderID);
 			totalLeadsOppo = test.getCount(OR_SalesAgent.TOTAL_LIST_AFTER_SEARCH);
 			test.reportMessage("Total Match found " + totalLeadsOppo, false);

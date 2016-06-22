@@ -12,7 +12,7 @@ import com.automation.framework.exception.BusinessException;
 import com.automation.framework.util.Test;
 import com.rabbitbase.constants.NANA_Constants;
 import com.rabbitbase.constants.Project_Constants;
-import com.rabbitbase.excelcolumns.XL_GenericNANA;
+import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitbase.generic.Generic_NANA;
 import com.rabbitnana.excelcolumns.XL_TabInfo;
 import com.rabbitnana.excelcolumns.XL_WriteToExcel;
@@ -63,7 +63,7 @@ public class TabInfo extends FunctionsApplib {
 
 	private void validateTabLegends() throws BusinessException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_CUSTOMERINFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_CUSTOMERINFO);
 
 		if (test.getData(XL_TabInfo.LEAD_OPPORTUNITY).equals("Lead")) {
 			test.isExists(OR_TabInfo.TAB_RED_CUSTOMER_INFO);
@@ -96,12 +96,12 @@ public class TabInfo extends FunctionsApplib {
 
 	private void tabCustomerInfo() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_CUSTOMERINFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_CUSTOMERINFO);
 		test.isExists(OR_TabInfo.LBL_MANDATORY_EMAIL);
 		test.isExists(OR_TabInfo.LBL_MANDATORY_FIRST_NAME);
 
 		String actualCustomerPhone = test.getTextFromElement(OR_TabInfo.LBL_LEAD_CUSTOMER_PHONE);
-		String expectedCustomerPhone = test.getData(2, XL_GenericNANA.SHEET_WRITE_TO_EXCEL,
+		String expectedCustomerPhone = test.getData(2, XL_GenericSheets.SHEET_WRITE_TO_EXCEL,
 				XL_WriteToExcel.LEADS_PHONE);
 		test.comparisonResult(expectedCustomerPhone, actualCustomerPhone, "Customer Phone");
 		if (!test.getData(XL_TabInfo.IS_DELETE_SALES).equals(Project_Constants.YES)) {
@@ -129,7 +129,7 @@ public class TabInfo extends FunctionsApplib {
 	}
 
 	private void tabCarInfo() throws BusinessException, InterruptedException {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_CAR_INFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_CAR_INFO);
 
 		test.script(SELECT_LIST, OR_TabInfo.WLS_CAR_YEAR, XL_TabInfo.CAR_YEAR);
 		test.script(SELECT_LIST, OR_TabInfo.WLS_CAR_BRAND, XL_TabInfo.CAR_BRAND);
@@ -171,7 +171,7 @@ public class TabInfo extends FunctionsApplib {
 	}
 
 	private void tabDriverInfo() throws Exception {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_DRIVER_INFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_DRIVER_INFO);
 		if (!test.getData(XL_TabInfo.DRIVE_PLACE).equals("Thailand")) {
 			selectProvinces();
 		}
@@ -195,7 +195,7 @@ public class TabInfo extends FunctionsApplib {
 		test.script(CLICK_BUTTON, OR_TabInfo.RDO_DRIVE_SOME_PROVINCES, "");
 
 		String getProvinces = test.getData(testWareBean.getExcelTestDataCurrentRow(),
-				XL_GenericNANA.SHEET_NANA_DRIVER_INFO, XL_TabInfo.PROVINCES);
+				XL_GenericSheets.SHEET_NANA_DRIVER_INFO, XL_TabInfo.PROVINCES);
 		String[] arrProvinces = getProvinces.split(";");
 
 		test.script(CLICK_BUTTON, OR_TabInfo.BTN_PROVICE_BOX, "");
@@ -285,7 +285,7 @@ public class TabInfo extends FunctionsApplib {
 	}
 
 	private void tabPolicyInfo() throws Exception {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_POLICY_INFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_POLICY_INFO);
 		String getLastInsurerValue = test.getTextFromSelected(OR_TabInfo.WLS_LAST_INSURER);
 		if (getLastInsurerValue.equals("None")) {
 			test.isExists(OR_TabInfo.TXT_LAST_PRICE_DISABLED);
@@ -319,7 +319,7 @@ public class TabInfo extends FunctionsApplib {
 
 	private void tabCustomerAddress() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_CUSTOMER_ADDRESS);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_CUSTOMER_ADDRESS);
 		test.script(SELECT_LIST, OR_TabInfo.WLS_CUSTOMER_PROVINCE, XL_TabInfo.ADDRESS_PROVINCE);
 		test.script(SELECT_LIST, OR_TabInfo.WLS_CUSTOMER_DISTRICT, XL_TabInfo.ADDRESS_DISTRICT);
 		test.script(SELECT_LIST, OR_TabInfo.WLS_CUSTOMER_SUB_DISTRICT, XL_TabInfo.ADDRESS_SUB_DISTRICT);
@@ -334,7 +334,7 @@ public class TabInfo extends FunctionsApplib {
 
 	private void tabBillingAddress() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_BILLING_ADDRESS);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_BILLING_ADDRESS);
 		if (test.getData(XL_TabInfo.IS_SAME_AS_CUSTOMER_ADDRESS).equals(Project_Constants.NO)) {
 			test.script(CLICK_BUTTON, OR_TabInfo.RDO_BILLING_ADDRESS_NO, "");
 			test.script(SELECT_LIST, OR_TabInfo.WLS_BILLING_PROVINCE, XL_TabInfo.ADDRESS_PROVINCE);
@@ -353,7 +353,7 @@ public class TabInfo extends FunctionsApplib {
 
 	private void tabShippingAddress() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_SHIPPING_ADDRESS);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_SHIPPING_ADDRESS);
 		if (test.getData(XL_TabInfo.IS_SAME_AS_SHIPPING_ADDRESS).equals(Project_Constants.NO)) {
 			test.script(CLICK_BUTTON, OR_TabInfo.RDO_SHIPPING_ADDRESS_NO, "");
 			test.script(SELECT_LIST, OR_TabInfo.WLS_SHIPPING_PROVINCE, XL_TabInfo.ADDRESS_PROVINCE);
@@ -389,7 +389,7 @@ public class TabInfo extends FunctionsApplib {
 	private void tabQuotes() throws BusinessException, InterruptedException, ParseException {
 
 		test.script(CLICK_BUTTON, OR_TabInfo.BTN_QUOTES_TAB, "");
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_QUOTES);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_QUOTES);
 		String getInsuranceType = test.getData(XL_TabInfo.INSURANCE_TYPE);
 		String[] replaceInsuranceType = null;
 		if (getInsuranceType.equalsIgnoreCase("All")) {
@@ -454,7 +454,7 @@ public class TabInfo extends FunctionsApplib {
 		int getQuotesCount = test.getCount(OR_TabInfo.COUNT_QUOTES_LIST);
 		int countToSlideBar = 10;
 		String expectedInsuranceType = test.getData(testWareBean.getExcelTestDataCurrentRow(),
-				XL_GenericNANA.SHEET_NANA_QUOTES, XL_TabInfo.INSURANCE_TYPE);
+				XL_GenericSheets.SHEET_NANA_QUOTES, XL_TabInfo.INSURANCE_TYPE);
 
 		/* Use slide bar when no package found */
 		while (getQuotesCount == 0) {
@@ -588,7 +588,7 @@ public class TabInfo extends FunctionsApplib {
 	}
 
 	private void tabPayments() throws BusinessException, InterruptedException {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_PAYMENTS);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_PAYMENTS);
 		test.script(CLICK_BUTTON, OR_TabInfo.BTN_PAYMENT_TAB, "");
 		String getPaymentOptions = test.getData(XL_TabInfo.PAYMENT_OPTIONS);
 		String[] replacePaymentOptions = null;

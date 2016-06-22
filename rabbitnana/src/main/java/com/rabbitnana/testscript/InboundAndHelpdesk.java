@@ -8,7 +8,7 @@ import com.automation.framework.exception.BusinessException;
 import com.automation.framework.util.Test;
 import com.rabbitbase.constants.NANA_Constants;
 import com.rabbitbase.constants.Project_Constants;
-import com.rabbitbase.excelcolumns.XL_GenericNANA;
+import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitbase.generic.Generic_NANA;
 import com.rabbitnana.excelcolumns.XL_InboundAndHelpdesk;
 import com.rabbitnana.excelcolumns.XL_TabInfo;
@@ -35,7 +35,7 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 	}
 
 	public void helpdeskAfterCreated() throws BusinessException, InterruptedException {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_INBOUNDHELPDESK);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_INBOUNDHELPDESK);
 
 		testWareBean.getWebDriver().get("http://staging-nana.rabbit.co.th");
 		genericNANA.menuNANA(NANA_Constants.INBOUND_HELPDESK);
@@ -68,7 +68,7 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 
 	private void searchOrderID() throws BusinessException, InterruptedException {
 
-		String getOrderID = test.getData(2, XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID);
+		String getOrderID = test.getData(2, XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID);
 		test.script(CLEAR_TYPE, OR_InboundAndHelpdesk.TXT_ORDER_ID, XL_WriteToExcel.LEADS_ORDER_ID, getOrderID);
 		test.script(CLICK_BUTTON, OR_InboundAndHelpdesk.BTN_FILTER, "");
 
@@ -76,19 +76,19 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 	}
 
 	private void validateDashboard() throws BusinessException, InterruptedException {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_INBOUNDHELPDESK);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_INBOUNDHELPDESK);
 		dashboard.validateHelpDeskDashboard();
 	}
 
 	private void validateCustomerInfo() throws BusinessException, InterruptedException {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_CUSTOMERINFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_CUSTOMERINFO);
 		test.isExists(OR_TabInfo.TAB_RED_CUSTOMER_INFO);
 
 		String expectedEmail = test.getData(XL_TabInfo.LEADS_EMAIL);
 		String actualEmail = test.getTextFromElement(OR_TabInfo.TXT_LEAD_CUSTOMER_EMAIL);
 		test.comparisonResult(expectedEmail, actualEmail, "Customer Email");
 
-		String expectedPhone = test.getData(2, XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_PHONE);
+		String expectedPhone = test.getData(2, XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_PHONE);
 		String actaulPhone = test.getAttributeValue(OR_InboundAndHelpdesk.LBL_LEAD_CUSTOMER_PHONE);
 		test.comparisonResult(expectedPhone, actaulPhone, "Customer Phone");
 
@@ -108,12 +108,12 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 			test.comparisonResult(expectedLastName, actualLastName, "Last Name");
 		} else {
 			String currentTest = testWareBean.getSheetTestDataName();
-			test.setSheetName(XL_GenericNANA.SHEET_NANA_INBOUNDHELPDESK);
+			test.setSheetName(XL_GenericSheets.SHEET_NANA_INBOUNDHELPDESK);
 			test.script(TYPE, OR_TabInfo.TXT_LEAD_CUSTOMER_LASTNAME, XL_InboundAndHelpdesk.LEADS_LAST_NAME);
 			test.setSheetName(currentTest);
 		}
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_INBOUNDHELPDESK);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_INBOUNDHELPDESK);
 		String getLBL_NationalID = test.getTextFromElement(OR_InboundAndHelpdesk.LBL_NATIONAL_ID_PASSPORT);
 		test.reportMessage("Lable - " + getLBL_NationalID, false);
 		test.script(TYPE, OR_InboundAndHelpdesk.TXT_NATIONAL_ID_PASSPORT, XL_InboundAndHelpdesk.NATIONAL_ID_PASSPORT);
@@ -122,7 +122,7 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 
 	private void validateCarInfo() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_CAR_INFO);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_CAR_INFO);
 
 		test.isExists(OR_InboundAndHelpdesk.LBL_LICENSE_PLATE_MANDATORY);
 		test.isExists(OR_InboundAndHelpdesk.LBL_CHASSIS_NUMBER_MANDATORY);
@@ -161,7 +161,7 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 				|| test.getData(XL_TabInfo.VEHICLE_IDENTIFICATION_NUMBER).isEmpty()) {
 			test.isExists(OR_TabInfo.TAB_RED_CAR_INFO);
 			String getSheetName = testWareBean.getSheetTestDataName();
-			test.setSheetName(XL_GenericNANA.SHEET_NANA_INBOUNDHELPDESK);
+			test.setSheetName(XL_GenericSheets.SHEET_NANA_INBOUNDHELPDESK);
 			test.script(TYPE, OR_InboundAndHelpdesk.TXT_LICENSE_PLATE, XL_InboundAndHelpdesk.LICENSE_PLATE);
 			test.script(TYPE, OR_InboundAndHelpdesk.TXT_CHASSIS_NUMBER, XL_InboundAndHelpdesk.CHASSIS_NUMBER);
 			test.script(TYPE, OR_InboundAndHelpdesk.TXT_VEHICLE_IDENTIFICATION_NUMBER,
@@ -204,10 +204,10 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 		test.isExists(OR_InboundAndHelpdesk.DOC_ID_CARD);
 
 		String getLastInsurer = test.getData(testWareBean.getExcelTestDataCurrentRow(),
-				XL_GenericNANA.SHEET_NANA_POLICY_INFO, XL_TabInfo.LAST_INSURER);
+				XL_GenericSheets.SHEET_NANA_POLICY_INFO, XL_TabInfo.LAST_INSURER);
 
 		String getInsuranceType = test.getData(testWareBean.getExcelTestDataCurrentRow(),
-				XL_GenericNANA.SHEET_NANA_QUOTES, XL_TabInfo.INSURANCE_TYPE);
+				XL_GenericSheets.SHEET_NANA_QUOTES, XL_TabInfo.INSURANCE_TYPE);
 
 		if ((!getLastInsurer.equals("") && getInsuranceType.equals("Type 1"))
 				|| (!getLastInsurer.isEmpty() && getInsuranceType.equals("Type 1"))) {
@@ -223,10 +223,10 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 		testWareBean.getWebDriver().navigate().refresh();
 
 		String getDriverMain = test.getData(testWareBean.getExcelTestDataCurrentRow(),
-				XL_GenericNANA.SHEET_NANA_DRIVER_INFO, XL_TabInfo.IS_CUSTOMER_MAIN_DRIVER);
+				XL_GenericSheets.SHEET_NANA_DRIVER_INFO, XL_TabInfo.IS_CUSTOMER_MAIN_DRIVER);
 
 		String getDriver2 = test.getData(testWareBean.getExcelTestDataCurrentRow(),
-				XL_GenericNANA.SHEET_NANA_DRIVER_INFO, XL_TabInfo.IS_FIXED_DRIVER_2);
+				XL_GenericSheets.SHEET_NANA_DRIVER_INFO, XL_TabInfo.IS_FIXED_DRIVER_2);
 
 		if (getDriverMain.equals(Project_Constants.YES) && getInsuranceType.equals("Type 1")) {
 			test.script(CLICK_BUTTON, OR_InboundAndHelpdesk.BTN_DRIVING_LICENSE, "");
@@ -252,7 +252,7 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 	private void clickOnLeadFileBtn() throws BusinessException, InterruptedException {
 
 		int getTotalOrder = test.getCount(OR_InboundAndHelpdesk.TOTAL_ORDER_ID);
-		String expectedOrderID = test.getData(2, XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID);
+		String expectedOrderID = test.getData(2, XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID);
 		String getStatus = "";
 		for (int startOrder = 2; startOrder <= getTotalOrder; startOrder++) {
 			String[] replaceStatus = test.replaceXpath(OR_InboundAndHelpdesk.LBL_STATUS, startOrder);
@@ -270,7 +270,7 @@ public class InboundAndHelpdesk extends FunctionsApplib {
 
 	private void tabPayment() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_INBOUNDHELPDESK);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_INBOUNDHELPDESK);
 
 		test.script(CLICK_BUTTON, OR_InboundAndHelpdesk.BTN_PAYMENT_TAB, "");
 		testWareBean.getWebDriver().findElement(By.xpath(OR_InboundAndHelpdesk.TXT_CUSTOMER_PAY_DATE[0])).click();

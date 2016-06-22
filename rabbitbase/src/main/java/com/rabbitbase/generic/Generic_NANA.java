@@ -15,7 +15,7 @@ import com.automation.framework.beans.TestWareBean;
 import com.automation.framework.exception.BusinessException;
 import com.automation.framework.util.Test;
 import com.rabbitbase.constants.NANA_Constants;
-import com.rabbitbase.excelcolumns.XL_GenericNANA;
+import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitbase.objectrepository.OR_GenericNANA;
 
 public class Generic_NANA extends FunctionsApplib {
@@ -32,14 +32,15 @@ public class Generic_NANA extends FunctionsApplib {
 
 	@Override
 	protected String getSheetName() {
-		return null;
+		String getSheetName = testWareBean.getSheetTestDataName();
+		return getSheetName;
 	}
 
 	public void loginNANA(String menuName) throws BusinessException, InterruptedException {
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_LOGIN);
-		test.script(TYPE, OR_GenericNANA.WED_LOGIN_GMAIL_NANA_EMAIL, XL_GenericNANA.EMAIL);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_LOGIN);
+		test.script(TYPE, OR_GenericNANA.WED_LOGIN_GMAIL_NANA_EMAIL, XL_GenericSheets.EMAIL, false, 20);
 		test.script(CLICK_BUTTON, OR_GenericNANA.BTN_NEXT, "");
-		test.script(TYPE, OR_GenericNANA.WED_LOGIN_GMAIL_NANA_PASSWORD, XL_GenericNANA.PASSWORD);
+		test.script(TYPE, OR_GenericNANA.WED_LOGIN_GMAIL_NANA_PASSWORD, XL_GenericSheets.PASSWORD, false, 20);
 		test.script(CLICK_BUTTON, OR_GenericNANA.BTN_SIGNIN, "");
 		testWareBean.getWebDriver().get(testWareBean.getExecuteURL());
 		menuNANA(menuName);
@@ -142,6 +143,7 @@ public class Generic_NANA extends FunctionsApplib {
 	}
 
 	public void calDOBValidation(String xPath[], String day, String month, String year) throws Exception {
+
 		test.script(CLICK_BUTTON, xPath, "");
 		int getYear = Integer.parseInt(year);
 		int getAge = validationYear() - getYear;
@@ -165,18 +167,23 @@ public class Generic_NANA extends FunctionsApplib {
 	}
 
 	public void calFutureDateValidation(String xPath[]) throws BusinessException, InterruptedException {
+
 		test.script(CLICK_BUTTON, xPath, "");
 		test.isExists(OR_GenericNANA.BTN_BACK_DATE_DISABLED);
+
 	}
 
-	private int validationYear() {
+	private int validationYear() throws BusinessException {
+
 		Calendar date = Calendar.getInstance();
 		date.setTime(new Date());
 		Format f = new SimpleDateFormat("yyyy");
 		int currentYear = Integer.parseInt(f.format(date.getTime()));
+
 		return currentYear;
 		// date.add(Calendar.YEAR, -18);
 		// String yearBefore18 = f.format(date.getTime());
+
 	}
 
 	public void uploadDocument(String id, String uploadFile) {

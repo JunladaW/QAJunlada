@@ -4,7 +4,7 @@ import com.automation.framework.applib.FunctionsApplib;
 import com.automation.framework.beans.TestWareBean;
 import com.automation.framework.exception.BusinessException;
 import com.automation.framework.util.Test;
-import com.rabbitbase.excelcolumns.XL_GenericNANA;
+import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitbase.generic.Generic_NANA;
 import com.rabbitnana.excelcolumns.XL_Leads;
 import com.rabbitnana.excelcolumns.XL_WriteToExcel;
@@ -42,7 +42,7 @@ public class Dashboard extends FunctionsApplib {
 			test.comparisonResult(expectedOrderID, actualOrderID, "Dashboard - Order ID");
 		} else {
 			String actualOrderID = test.getTextFromElement(OR_Dashboard.LBL_DASHBOARD_ORDER_ID);
-			genericNANA.writeToExcel(XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID,
+			genericNANA.writeToExcel(XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID,
 					actualOrderID);
 			test.reportMessage("Order ID : " + actualOrderID, false);
 		}

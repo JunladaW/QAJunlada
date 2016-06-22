@@ -9,7 +9,7 @@ import com.automation.framework.util.GenericUtil;
 import com.automation.framework.util.Test;
 import com.rabbitbase.constants.NANA_Constants;
 import com.rabbitbase.constants.Project_Constants;
-import com.rabbitbase.excelcolumns.XL_GenericNANA;
+import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitbase.generic.Generic_NANA;
 import com.rabbitnana.excelcolumns.XL_Leads;
 import com.rabbitnana.excelcolumns.XL_WriteToExcel;
@@ -30,12 +30,12 @@ public class Leads extends FunctionsApplib {
 
 	@Override
 	protected String getSheetName() {
-		return XL_GenericNANA.SHEET_NANA_LEADS;
+		return XL_GenericSheets.SHEET_NANA_LEADS;
 	}
 
 	public void createLead() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_LEADS);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_LEADS);
 		test.script(CLICK_BUTTON, OR_Leads.BTN_ADD_LEAD_LISTPAGE, "");
 
 		validateMandatoryLeads();
@@ -45,7 +45,7 @@ public class Leads extends FunctionsApplib {
 		test.reportMessage("Order ID: " + getOrderIDFromListPage(), false);
 
 		/* Write to Excel */
-		genericNANA.writeToExcel(XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID,
+		genericNANA.writeToExcel(XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_ORDER_ID,
 				getOrderIDFromListPage());
 
 		validateLeadData();
@@ -60,7 +60,7 @@ public class Leads extends FunctionsApplib {
 
 	public void createOpportunity() throws BusinessException, InterruptedException {
 
-		test.setSheetName(XL_GenericNANA.SHEET_NANA_LEADS);
+		test.setSheetName(XL_GenericSheets.SHEET_NANA_LEADS);
 		test.script(CLICK_BUTTON, OR_Leads.BTN_ADD_LEAD_LISTPAGE, "");
 		String getTitle = test.getData(XL_Leads.LEADS_TITLE);
 		if (getTitle.equals("Mr")) {
@@ -91,7 +91,7 @@ public class Leads extends FunctionsApplib {
 	private void enterLeadMandatoryData() throws BusinessException, InterruptedException {
 		/* Generate Phone number and write to Excel */
 		generatePhoneNumber = "080" + GenericUtil.getRandomNumber();
-		genericNANA.writeToExcel(XL_GenericNANA.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_PHONE, generatePhoneNumber);
+		genericNANA.writeToExcel(XL_GenericSheets.SHEET_WRITE_TO_EXCEL, XL_WriteToExcel.LEADS_PHONE, generatePhoneNumber);
 
 		test.script(TYPE, OR_Leads.TXT_PHONE, XL_WriteToExcel.LEADS_PHONE);
 		test.script(SELECT_LIST, OR_Leads.WLS_SOURCE, XL_Leads.LEADS_SOURCE);

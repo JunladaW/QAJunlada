@@ -15,6 +15,8 @@
 	<module>rabbitrewards</module>
 	<module>rabbitbase</module>
 	<module>rabbitnana</module>
+	<module>rabbitmtls</module>
+	<module>rabbitcignatravel</module>
 	</modules>
   
   <repositories>
