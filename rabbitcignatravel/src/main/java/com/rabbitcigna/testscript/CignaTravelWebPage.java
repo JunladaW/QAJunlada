@@ -34,11 +34,10 @@ public class CignaTravelWebPage extends FunctionsApplib {
 	}
 
 	public void cignaTravelWeb() throws BusinessException, InterruptedException {
-
+		testWareBean.getWebDriver().get("https://1423:1423@staging-finance.rabbitinternet.com/travel-insurance/cigna");
 		landingPageSaveNow();
 		yourTrip();
 		secTravelers();
-		Thread.sleep(10000);
 		cignaWebPageValidations();
 	}
 
@@ -63,7 +62,7 @@ public class CignaTravelWebPage extends FunctionsApplib {
 	private void yourTrip() throws BusinessException, InterruptedException {
 
 		int getDestinationCount = test.getCount(OR_CignaTravelWebPage.TOTAL_TRAVEL_DESTINATION);
-		test.reportMessage("Total Destination Countries are " + getDestinationCount, false);
+		test.reportMessage("Total Destination Countries are " + (getDestinationCount - 1), false);
 
 		for (int destination = 1; destination <= getDestinationCount; destination++) {
 
@@ -108,6 +107,7 @@ public class CignaTravelWebPage extends FunctionsApplib {
 
 	private void cignaWebPageValidations() throws BusinessException, InterruptedException {
 
+		test.script(WAIT_FOR_VISIBLE, OR_CignaTravelWebPage.LBL_CIGNA_DESTINATION, "", false, 10);
 		String actualCignaDestination = test.getTextFromElement(OR_CignaTravelWebPage.LBL_CIGNA_DESTINATION);
 		String expectedDestination = test.getData(XL_CignaTravelWebPage.TRAVEL_DESTIONATION);
 

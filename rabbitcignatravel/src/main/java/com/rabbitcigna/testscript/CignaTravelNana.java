@@ -6,6 +6,7 @@ import com.automation.framework.exception.BusinessException;
 import com.automation.framework.util.Test;
 import com.rabbitbase.excelcolumns.XL_GenericSheets;
 import com.rabbitbase.objectrepository.OR_GenericNANA;
+import com.rabbitcigna.excelcolumns.XL_CignaTravelNANA;
 import com.rabbitcigna.excelcolumns.XL_CignaTravelWebPage;
 import com.rabbitcigna.excelcolumns.XL_WriteToExcel;
 import com.rabbitcigna.objectrepository.OR_CignaTravelNANA;
@@ -27,7 +28,7 @@ public class CignaTravelNana extends FunctionsApplib {
 	}
 
 	public void loginNANA() throws BusinessException, InterruptedException {
-		testWareBean.setExecuteURL("http://test1-nana.rabbit.co.th/home?lang=en");
+		testWareBean.setExecuteURL("http://staging-nana.rabbit.co.th");
 		testWareBean.getWebDriver().get(testWareBean.getExecuteURL());
 		test.setSheetName(XL_GenericSheets.SHEET_NANA_LOGIN);
 		test.script(TYPE, OR_GenericNANA.WED_LOGIN_GMAIL_NANA_EMAIL, XL_GenericSheets.EMAIL, false, 20);
@@ -86,7 +87,42 @@ public class CignaTravelNana extends FunctionsApplib {
 				test.reportMessage("Travel Created Date : " + actualCreatedDate, false);
 				break;
 			}
+		}
+	}
 
+	public void searchCreatedDate() throws BusinessException, InterruptedException {
+		test.setSheetName(XL_GenericSheets.SHEET_CIGNA_TRAVEL_NANA);
+		menuSelection();
+		String getSearchDate = test.getData(XL_CignaTravelNANA.SEARCH);
+		if (getSearchDate.equalsIgnoreCase("FutureDay")) {
+			test.script(CLICK_BUTTON, OR_CignaTravelNANA.TXT_CREATED_DATE_SEARCH, "");
+			String nextDay = test.addDays(1, "yyyy-MM-dd");
+			test.scriptDirectValue(CLEAR_TYPE, OR_CignaTravelNANA.TXT_CREATED_DATE_SEARCH,
+					XL_CignaTravelNANA.SEARCH_DATE, nextDay, false, 10);
+			test.script(CLICK_BUTTON, OR_CignaTravelNANA.BTN_FILTER, "");
+			if (test.isExists(OR_CignaTravelNANA.LBL_NO_RECORDS_FOUND)) {
+				String expectedCreatedDate = test.getTextFromElement(OR_CignaTravelNANA.TXT_CREATED_DATE_SEARCH);
+				test.reportMessage("Search Future Date [" + expectedCreatedDate + "] - No Records Found", false);
+			} else {
+				test.reportMessage("Search Future Date - Records found", true);
+			}
+
+		} else {
+			test.script(CLICK_BUTTON, OR_CignaTravelNANA.TXT_CREATED_DATE_SEARCH, "");
+			test.script(CLICK_BUTTON, OR_CignaTravelNANA.BTN_FILTER, "");
+			Thread.sleep(2000);
+			String expectedCreatedDate = test.getTextFromElement(OR_CignaTravelNANA.TXT_CREATED_DATE_SEARCH);
+			int totalPhoneNumbers = test.getCount(OR_CignaTravelNANA.TOTAL_MOBILE_LIST);
+
+			for (int createdDate = 2; createdDate <= totalPhoneNumbers; createdDate++) {
+				String[] replaceCreatedDate = test.replaceXpath(OR_CignaTravelNANA.LBL_CREATED_DATE, createdDate);
+				String[] splitCreatedDate = test.getTextFromElement(replaceCreatedDate).split(" ");
+				String actualCreatedDate = splitCreatedDate[0];
+				if (!expectedCreatedDate.equals(actualCreatedDate)) {
+					test.reportMessage("Created Date Filter is not working fine", true);
+				}
+			}
+			test.reportMessage("Created Date filter is working fine", false);
 		}
 
 	}

@@ -11,6 +11,8 @@
 			<class name="com.rabbitcigna.testcase.cignatravel.CignaTravel_004_Lead_SaveFromCenterSelect" />
 			<class name="com.rabbitcigna.testcase.cignatravel.CignaTravel_005_Lead_SaveFromBottomButton" />
 			<class name="com.rabbitcigna.testcase.cignatravel.CignaTravel_006_Lead_SaveFromBottomSelect" />
+			<class name="com.rabbitcigna.testcase.cignatravel.CignaTravel_007_CreatedDateFilter" />
+			<class name="com.rabbitcigna.testcase.cignatravel.CignaTravel_008_CreatedDateFilterFutureDate" />
 		</classes>
 	</test>
 
