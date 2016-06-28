@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rabbit Rewards" parallel="false" thread-count="2">
+
+	<test verbose="1" name="End to End Scenario - 1">
+		<parameter name="Browser" value="Chrome"/>
+		<classes>
+		<class name="com.rabbitmtls.testcase.leads.MTLS_001_LeadCreation_SaveNowTop" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_002_LeadCreation_SaveFromSelectTop" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_003_LeadCreation_SaveNowCenter" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_004_LeadCreation_SaveFromSelectCenter" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_005_LeadCreation_SaveNowBottom" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_006_LeadCreation_SaveFromSelectBottom" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_007_Lead_Filter_CreatedDate" />
+		<class name="com.rabbitmtls.testcase.leads.MTLS_008_Lead_Filter_CreatedDateWithFuture" />
+		</classes>
+	</test>
+
+	
+</suite> 
