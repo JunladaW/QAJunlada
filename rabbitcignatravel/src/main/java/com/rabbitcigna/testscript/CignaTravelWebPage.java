@@ -107,7 +107,7 @@ public class CignaTravelWebPage extends FunctionsApplib {
 
 	private void cignaWebPageValidations() throws BusinessException, InterruptedException {
 
-		test.script(WAIT_FOR_VISIBLE, OR_CignaTravelWebPage.LBL_CIGNA_DESTINATION, "", false, 10);
+		test.script(WAIT_FOR_VISIBLE, OR_CignaTravelWebPage.LBL_CIGNA_DESTINATION, "", false, 20);
 		String actualCignaDestination = test.getTextFromElement(OR_CignaTravelWebPage.LBL_CIGNA_DESTINATION);
 		String expectedDestination = test.getData(XL_CignaTravelWebPage.TRAVEL_DESTIONATION);
 
@@ -116,6 +116,11 @@ public class CignaTravelWebPage extends FunctionsApplib {
 		String[] getStartMonth = dateStartTravel.split("-");
 		String startMonth = getStartMonth[1];
 		String thaiStartMonth = monthInThai(startMonth);
+
+		if (getStartMonth[2].startsWith("0")) {
+			getStartMonth[2] = getStartMonth[2].replaceFirst("0", "");
+		}
+
 		String expectedTravelStartDate = getStartMonth[2] + " " + thaiStartMonth + " " + getStartMonth[0];
 		String actualTravelStartDate = test.getTextFromElement(OR_CignaTravelWebPage.LBL_TRAVEL_START_DATE);
 
@@ -124,6 +129,9 @@ public class CignaTravelWebPage extends FunctionsApplib {
 		String[] getEndMonth = dateEndTravel.split("-");
 		String endMonth = getEndMonth[1];
 		String thaiEndMonth = monthInThai(endMonth);
+		if (getEndMonth[2].startsWith("0")) {
+			getEndMonth[2] = getEndMonth[2].replaceFirst("0", "");
+		}
 		String expectedTravelEndDate = getEndMonth[2] + " " + thaiEndMonth + " " + getEndMonth[0];
 		String actualTravelEndDate = test.getTextFromElement(OR_CignaTravelWebPage.LBL_TRAVEL_END_DATE);
 
@@ -135,11 +143,17 @@ public class CignaTravelWebPage extends FunctionsApplib {
 		test.script(WAIT_FOR_INVISIBLE, OR_CignaTravelWebPage.BTN_PREV_MONTH, "");
 		test.isExists(OR_CignaTravelWebPage.BTN_NEXT_MONTH);
 
-		String yesterdayDate = getDate(-1);
+		String yesterdayDate = getDate(0);
+		if (yesterdayDate.startsWith("0")) {
+			yesterdayDate = yesterdayDate.replaceFirst("0", "");
+		}
 		String[] validateYesterDay = test.replaceXpath(OR_CignaTravelWebPage.LBL_PREV_DATE, yesterdayDate);
 		test.isExists(validateYesterDay);
 
 		String dateTomorrow = getDate(1);
+		if (dateTomorrow.startsWith("0")) {
+			dateTomorrow = dateTomorrow.replaceFirst("0", "");
+		}
 		String[] getCurrentDate = test.replaceXpath(OR_CignaTravelWebPage.BTN_DATE_SELECTION, dateTomorrow);
 		test.script(CLICK_BUTTON, getCurrentDate, "");
 		String getSelectedDate = test.getTextFromElement(OR_CignaTravelWebPage.TXT_TRAVEL_DURATION_FROM);
@@ -153,10 +167,16 @@ public class CignaTravelWebPage extends FunctionsApplib {
 		test.isExists(OR_CignaTravelWebPage.BTN_NEXT_MONTH);
 
 		String yesterdayDate = getDate(-1);
+		if (yesterdayDate.startsWith("0")) {
+			yesterdayDate = yesterdayDate.replaceFirst("0", "");
+		}
 		String[] validateYesterDay = test.replaceXpath(OR_CignaTravelWebPage.LBL_PREV_DATE, yesterdayDate);
 		test.isExists(validateYesterDay);
 
 		String currentDate = getDate(1);
+		if (currentDate.startsWith("0")) {
+			currentDate = currentDate.replaceFirst("0", "");
+		}
 		String[] getCurrentDate = test.replaceXpath(OR_CignaTravelWebPage.BTN_DATE_SELECTION, currentDate);
 		test.script(CLICK_BUTTON, getCurrentDate, "");
 		String getSelectedDate = test.getTextFromElement(OR_CignaTravelWebPage.TXT_TRAVEL_DURATION_TO);
@@ -179,6 +199,9 @@ public class CignaTravelWebPage extends FunctionsApplib {
 			getMonthYear = test.getTextFromElement(repalceMonthYearText);
 			if (("« " + expecteMonthYear).contains(getMonthYear)
 					|| ("« " + expecteMonthYear + " »").contains(getMonthYear)) {
+				if (splitMonth[2].startsWith("0")) {
+					splitMonth[2] = splitMonth[2].replaceFirst("0", "");
+				}
 				String[] selectDate = test.replaceXpath(OR_CignaTravelWebPage.BTN_DATE_SELECTION, splitMonth[2]);
 				test.script(CLICK_BUTTON, selectDate, "");
 				String getSelectedDate = test.getTextFromElement(OR_CignaTravelWebPage.TXT_TRAVEL_DURATION_TO);
@@ -230,7 +253,7 @@ public class CignaTravelWebPage extends FunctionsApplib {
 			thaiMonth = "ก.ย.";
 			break;
 		case "10":
-			thaiMonth = "ต.ค";
+			thaiMonth = "ต.ค.";
 			break;
 		case "11":
 			thaiMonth = "พ.ย";

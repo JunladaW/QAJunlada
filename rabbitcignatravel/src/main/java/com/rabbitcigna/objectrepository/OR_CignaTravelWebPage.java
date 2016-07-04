@@ -53,7 +53,7 @@ public class OR_CignaTravelWebPage {
 			"Previous Month Disabled" };
 	public static final String[] BTN_NEXT_MONTH = { "//*[@class='next' and @style='visibility: visible;']",
 			"Next Month Enabled" };
-	public static final String[] LBL_PREV_DATE = { "//*[@class='disabled day' and contains(.,'%s')]",
+	public static final String[] LBL_PREV_DATE = { "//*[contains(@class,'disabled day') and contains(.,'%s')]",
 			"Previous Date Disabled" };
 	public static final String[] BTN_DATE_SELECTION = { "//*[@class='day' and contains(.,'%s')]", "Select Date" };
 	public static final String[] LBL_DATE_MONTH_YEAR = { "//*[@class='datepicker-switch' and contains(.,'%s')]",

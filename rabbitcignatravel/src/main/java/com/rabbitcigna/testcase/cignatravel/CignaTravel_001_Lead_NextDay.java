@@ -19,7 +19,7 @@ public class CignaTravel_001_Lead_NextDay extends BaseClass {
 		return "CignaTravel.xls";
 	}
 
-	@Test(groups = { "CIGNA_LEADS" })
+	@Test(groups = { "CIGNA_LEADS", "Testing" })
 	public void cignaLeadWebpage() throws BusinessException, InterruptedException {
 		setExcelRow(2);
 		CignaTravelWebPage cigna = new CignaTravelWebPage(testWareBean, test);
