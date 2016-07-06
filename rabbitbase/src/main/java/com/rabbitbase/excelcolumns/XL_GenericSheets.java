@@ -30,4 +30,12 @@ public class XL_GenericSheets {
 	public static final String SHEET_CIGNA_TRAVEL_WEBPAGE = "CIGNA_TRAVEL_WEB_PAGE";
 	public static final String SHEET_CIGNA_TRAVEL_NANA = "CIGNA_TRAVEL_NANA";
 
+	/* MTLS Sheets */
+	public static final String SHEET_MTLS_WEBPAGE = "MTLS_WEB_PAGE";
+	public static final String SHEET_MTLS_NANA = "MTLS_NANA";
+
+	/* KTA Sheets */
+	public static final String SHEET_KTA_WEBPAGE = "KTA_WEB_PAGE";
+	public static final String SHEET_KTA_NANA = "KTA_NANA";
+
 }
